@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+    - name: nginx-srv
+      image: doudou225/nginx-varwwwhtml
+      volumeMounts:
+        - name: vol-cm-nginx-index
+          mountPath: /var/www/html
+  volumes:
+    - name: vol-cm-nginx-index
+      configMap:
+        name: cm-index-page

@@ -1,0 +1,4 @@
+Go the Kworker01 to see the static pod.
+Static Pod are not managed by the K8s api and don't need a control plane.
+You can see them however using the K8s API via their mirror pods, but you
+cannot make any change on them via the K8s API.

@@ -1,0 +1,9 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: sidecar
+spec:
+  containers:
+    - name: busybox
+      image: radial/busyboxplus:curl
+      command: ['sh', '-c', 'while true; do sleep 10; done']

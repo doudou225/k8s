@@ -1,0 +1,12 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: init-pod
+spec:
+  containers:
+    - name: nginx
+      image: nginx:1.19.1
+  initContainers:
+    - name: busybox
+      image: busybox
+      command: ['sleep', '30']

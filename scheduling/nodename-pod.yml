@@ -1,0 +1,9 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nodename-pod
+spec:
+  nodeName: kworker01
+  containers:
+    - name: nginx
+      image: nginx

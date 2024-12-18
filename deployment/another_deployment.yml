@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dd
+  name: dd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dd
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: dd
+    spec:
+      containers:
+      - image: doudou225/nginx-varwwwhtml
+        name: nginx-varwwwhtml
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}

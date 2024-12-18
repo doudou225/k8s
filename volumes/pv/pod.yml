@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod01
+  labels:
+    env: home
+spec:
+  volumes:
+    - name: webdir
+      persistentVolumeClaim:
+        claimName: pvc01
+  containers:
+    - name: container01
+      image: doudou225/nginx-varwwwhtml
+      ports:
+        - containerPort: 80
+          name: "http-server"
+      volumeMounts:
+        - mountPath: "/var/www/html"
+          name: webdir
+
+
+

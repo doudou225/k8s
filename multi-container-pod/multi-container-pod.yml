@@ -1,0 +1,11 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: multi-container-pod
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+    - name: redis
+      image: redis
+

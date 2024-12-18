@@ -1,0 +1,20 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: my-pod
+  labels:
+    lab: "true"
+spec:
+  nodeName: kworker01
+  containers:
+    - name: web
+      image: doudou225/nginx-varwwwhtml
+      volumeMounts:
+        - name: webfolder
+          mountPath: /var/www/html
+      ports:
+        - containerPort: 80
+  volumes:
+    - name: webfolder
+      hostPath:
+        path: /var/webfiles

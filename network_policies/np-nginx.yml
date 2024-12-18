@@ -1,0 +1,12 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: np-nginx
+  namespace: netpolicy-test
+  labels:
+    app: nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+

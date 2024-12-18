@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+  name: deploy01
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      env: home
+  template:
+    metadata:
+      labels:
+        env: home
+    
+    spec:
+      containers:
+      - image: doudou225/nginx-varwwwhtml
+        name: nginx
+        ports:
+          - containerPort: 80
+        volumeMounts:
+          - mountPath: "/var/www/html"
+            name: webdir
+
+      volumes:
+      - name: webdir
+        persistentVolumeClaim:
+          claimName: pvc01
