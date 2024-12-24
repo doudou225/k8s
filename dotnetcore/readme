@@ -1,0 +1,1 @@
+Note: ASP.NET Core apps (in official images) listen to port 8080 by default⁠, starting with .NET 8. The -p argument⁠ in these examples maps host port 8000 to container port 8080 (host:container mapping). The container will not be accessible without this mapping. ASP.NET Core can be configured to listen on a different or additional port⁠.

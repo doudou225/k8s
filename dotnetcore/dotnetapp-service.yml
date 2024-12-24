@@ -1,0 +1,35 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"svc31000","namespace":"default"},"spec":{"ports":[{"nodePort":31000,"port":80,"protocol":"TCP","targetPort":80}],"selector":{"env":"home"},"type":"NodePort"}}
+  creationTimestamp: "2024-12-22T02:09:00Z"
+  name: svc31000
+  namespace: default
+  resourceVersion: "1507693"
+  uid: 6a1a9357-a84d-4dff-9454-173e79e9cb40
+spec:
+  clusterIP: 10.109.207.62
+  clusterIPs:
+  - 10.109.207.62
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 31000
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    env: home
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
